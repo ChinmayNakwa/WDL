@@ -1,0 +1,230 @@
+/* Core Theme Variables */
+:root {
+    --dark-bg: #1a1a1a;
+    --dark-surface: #242424;
+    --primary: #0d6efd;
+    --text: #ffffff;
+    --text-secondary: #909090;
+    --success: #198754;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--dark-surface) !important;
+    box-shadow: var(--card-shadow);
+}
+
+/* Cards */
+.card {
+    background: var(--dark-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-img-top {
+    padding: 1rem;
+    background: var(--dark-surface);
+    height: 200px;
+    object-fit: contain;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+/* Filter and Sort Controls */
+.btn-group .btn-outline-primary {
+    color: var(--text);
+    border-color: var(--primary);
+}
+
+.btn-group .btn-outline-primary:hover,
+.btn-group .btn-outline-primary.active {
+    background-color: var(--primary);
+    color: var(--text);
+}
+
+#sortProducts {
+    background-color: var(--dark-surface);
+    color: var(--text);
+    border-color: var(--primary);
+}
+
+/* Section Headers */
+.container h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--text);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--primary);
+}
+
+/* Price Tags */
+.price {
+    color: var(--success);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Form Controls */
+.form-control {
+    background: var(--dark-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+.form-control:focus {
+    background: var(--dark-surface);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+    color: var(--text);
+}
+
+/* Enhanced Search Box */
+.search-box {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.search-box .form-control {
+    border-radius: 20px;
+    padding-left: 40px;
+    padding-right: 15px;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.search-box:hover .form-control {
+    width: 300px;
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
+}
+
+.search-box .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    z-index: 10;
+}
+
+.search-box .btn-search {
+    border-radius: 20px;
+    padding: 6px 15px;
+    margin-left: -1px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+
+.back-to-top.show {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+/* Product Sections */
+.product-section {
+    transition: opacity 0.3s ease;
+}
+
+.product-section.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-surface);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+footer h5 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Medicine Detail Page Specific */
+.medicine-detail-card {
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.medicine-detail-card .card-img-top {
+    max-height: 300px;
+    width: auto;
+    margin: 0 auto;
+}
